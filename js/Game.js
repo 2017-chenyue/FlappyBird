@@ -41,7 +41,6 @@ Game.prototype.homeOver = function(){
 }
 // 准备
 Game.prototype.getReady = function(){
-	// this.ctx.canvas.removeEventListener("mousedown" , btnDown);
 	var me = this;
 	this.readyTimer = setInterval(function(){
 		me.frequency ++;
@@ -74,8 +73,8 @@ Game.prototype.start = function(){
 		// 清屏
 		me.ctx.clearRect(0, 0, 91,94);
 		// 渲染山
-		me.checkPx();
-		me.checkLand();
+		// me.checkPx();
+		// me.checkLand();
 		me.moveMountain();
 		me.renderMountain();
 		me.moveLand();
@@ -92,7 +91,7 @@ Game.prototype.start = function(){
 		}
 		// me.drawBird();
 		// me.drawPipe();
-		// me.checkBird();
+		me.checkBird();
 	}, 20)
 }
 // 结束游戏
@@ -474,10 +473,5 @@ Game.prototype.checkLand = function(){
 			this.gameOver();
 			return;
 		}
-	}
-}
-Game.prototype.bindclick = function(){
-	this.ctx.canvas.onclick = function(){
-		
 	}
 }
