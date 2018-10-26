@@ -140,7 +140,7 @@ Game.prototype.bindBtn = function(){
 	var me = this;
 	this.ctx.canvas.addEventListener("mousemove", function(e){
 		var x = e.clientX - me.offset(me.ctx.canvas).left;
-		var y = e.clientY - me.offset(me.ctx.canvas).top;
+		var y = e.clientY + document.documentElement.scrollTop - me.offset(me.ctx.canvas).top;
 		var lineLeft = (me.ctx.canvas.width - me.startBtn.img.width) / 2;
 		var lineRight = (me.ctx.canvas.width - me.startBtn.img.width) / 2 + me.startBtn.img.width;
 		var lineTop = me.startBtn.y;
@@ -153,7 +153,7 @@ Game.prototype.bindBtn = function(){
 	})
 	function btnDown (e){
 		var x = e.clientX - me.offset(me.ctx.canvas).left;
-		var y = e.clientY - me.offset(me.ctx.canvas).top;
+		var y = e.clientY + document.documentElement.scrollTop - me.offset(me.ctx.canvas).top;
 		var lineLeft = (me.ctx.canvas.width - me.startBtn.img.width) / 2;
 		var lineRight = (me.ctx.canvas.width - me.startBtn.img.width) / 2 + me.startBtn.img.width;
 		var lineTop = me.startBtn.y;
